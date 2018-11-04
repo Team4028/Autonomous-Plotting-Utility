@@ -41,7 +41,5 @@ plt.xlabel(columnHeaderList[xVar])
 plt.ylabel(columnHeaderList[yVar])
 
 plt.plot(dataMatrix[:,xVar], dataMatrix[:,yVar])
+plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVar] +'.png'))
 plt.show()
-
-
-

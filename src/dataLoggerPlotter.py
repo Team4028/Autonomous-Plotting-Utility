@@ -34,12 +34,42 @@ with open('../data/' + fileFolderAndName, newline='') as csvfile:
             except:
                 dataMatrix[i,j] = None
 
-xVar = int(input("\nEnter number of Column for horizontal axis: "))
-yVar = int(input("Enter number of Column for vertical axis: "))
-fig = plt.figure()
-plt.xlabel(columnHeaderList[xVar])
-plt.ylabel(columnHeaderList[yVar])
+def  plotPairOfCoordsByInput():
+    xVar = int(input("\nEnter number of Column for horizontal axis: "))
+    yVar = int(input("Enter number of Column for vertical axis: "))
+    plotPairOfColumns(xVar, yVar)
 
-plt.plot(dataMatrix[:,xVar], dataMatrix[:,yVar])
-# plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVar] +'.png'))
-plt.show()
+def plotVarVnumCycles(colNum):
+    fig = plt.figure()
+    plt.xlabel("Number of Cycles")
+    plt.ylabel(columnHeaderList[colNum])
+    plt.plot(range(0, len(rowCount)), dataMatrix[:,ycolNum])
+    # plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVar] +'.png'))
+    plt.show()
+
+def plotPairOfColumns(xCol, yCol):
+    fig = plt.figure()
+    plt.xlabel(columnHeaderList[xCol])
+    plt.ylabel(columnHeaderList[yCol])
+    plt.plot(dataMatrix[:,xCol], dataMatrix[:,yCol])
+    # plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVar] +'.png'))
+    plt.show()
+
+
+def plotKallmanXY():
+    plotPairOfColumns(9,10)
+
+def plotOldMeasuredXY():
+    plotPairOfColumns(4,5)
+
+def plotKallmanTheta():
+    plotVarVnumCycles(11)
+
+def plotOldMeasuredTheta():
+    plotVarVnumCycles(6)
+
+def plotXVariance():
+    plotVarVnumCycles()
+
+
+

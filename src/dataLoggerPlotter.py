@@ -69,7 +69,29 @@ def plotOldMeasuredTheta():
     plotVarVnumCycles(6)
 
 def plotXVariance():
-    plotVarVnumCycles()
+    plotVarVnumCycles(14)
+
+def plotYVariance():
+    plotVarVnumCycles(20)
+
+def plotThetaVariance():
+    plotVarVnumCycles(26)
+
+def fullFilterAnalysisPlot():
+    plotKallmanXY()
+    plotOldMeasuredXY()
+    plotKallmanTheta()
+    plotOldMeasuredTheta()
+    plotXVariance()
+    plotYVariance()
+    plotThetaVariance()
+
+
+fullFilterAnalysisPlot()
+
+
+
+
 
 
 

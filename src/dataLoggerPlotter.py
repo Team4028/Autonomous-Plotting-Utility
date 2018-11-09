@@ -15,9 +15,9 @@ except:
     print('No input given, using default file...')
 
 # Open of the data file and get the number of columns and rows
-with open('../data/' + fileFolderAndName, newline='') as csvfile:
+with open('C:/Users/willi/OneDrive/Documents/GitHub/Autonomous-Plotting-Utility/data/' + fileFolderAndName, newline='') as csvfile:
     tsvreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
-
+    
     columnHeaderList = next(tsvreader)
     colCount = len(columnHeaderList)
     rowCount = sum(1 for row in tsvreader)
@@ -27,7 +27,7 @@ with open('../data/' + fileFolderAndName, newline='') as csvfile:
 
 # Open the file again because csv.reader is an itterator so that the file
 # doesn't go into memory. Then put all the data in a numpy array
-with open('../data/' + fileFolderAndName, newline='') as csvfile:
+with open('C:/Users/willi/OneDrive/Documents/GitHub/Autonomous-Plotting-Utility/data/' + fileFolderAndName, newline='')  as csvfile:
     tsvreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
     dataMatrix = np.zeros((rowCount, colCount))
     for i in range(1, rowCount):

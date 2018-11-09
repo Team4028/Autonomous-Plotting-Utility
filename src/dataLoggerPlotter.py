@@ -38,7 +38,7 @@ with open('../data/' + fileFolderAndName, newline='') as csvfile:
             except:
                 dataMatrix[i,j] = None
 
-<<<<<<< HEAD
+
 def  plotPairOfCoordsByInput():
     xVar = int(input("\nEnter number of Column for horizontal axis: "))
     yVar = int(input("Enter number of Column for vertical axis: "))
@@ -93,7 +93,9 @@ def fullFilterAnalysisPlot():
 
 
 fullFilterAnalysisPlot()
-=======
+
+
+""" #multiline functionality
 numVars = int(input("\nEnter number of lines you want to plot: "))
 xVar = int(input("\nEnter number of Column for horizontal axis: "))
 
@@ -111,4 +113,4 @@ plt.legend()
 
 plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVars[0]] +'.png'))
 plt.show()
->>>>>>> master
+"""

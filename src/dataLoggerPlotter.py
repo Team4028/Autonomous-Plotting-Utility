@@ -5,7 +5,7 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
-fileFolderAndName = '20181103/20181103_114940_497_Auton.txt'
+fileFolderAndName = '20181108/20181108_203643_738_Auton.txt' # 20181103/20181103_114940_497_Auton.txt'
 
 # Check to see if an argument was given for the file to use
 try:
@@ -48,7 +48,7 @@ def plotVarVnumCycles(colNum):
     fig = plt.figure()
     plt.xlabel("Number of Cycles")
     plt.ylabel(columnHeaderList[colNum])
-    plt.plot(range(0, len(rowCount)), dataMatrix[:,ycolNum])
+    plt.plot(range(0, rowCount), dataMatrix[:,colNum])
     # plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVar] +'.png'))
     plt.show()
 

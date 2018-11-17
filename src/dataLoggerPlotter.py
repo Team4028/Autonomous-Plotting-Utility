@@ -59,13 +59,25 @@ def plotPairOfColumns(xCol, yCol):
     plt.legend()
 
 
-def plotKallmanXY():
+def plotKalmanXY():
     plotPairOfColumns(9,10)
 
 def plotOldMeasuredXY():
     plotPairOfColumns(4,5)
 
-def plotKallmanTheta():
+def plotKalmanX():
+    plotVarVnumCycles(9)
+
+def plotKalmanY():
+    plotVarVnumCycles(10)
+
+def plotMeasuredX():
+    plotVarVnumCycles(4)
+
+def plotMeasuredY():
+    plotVarVnumCycles(5)
+
+def plotKalmanTheta():
     plotVarVnumCycles(11)
 
 def plotOldMeasuredTheta():
@@ -83,11 +95,13 @@ def plotThetaVariance():
 def fullFilterAnalysisPlot():
     plt.figure(figsize=(12,8))
     plt.subplot(511)
+    plotKalmanX()
+    plotMeasuredX()
     plt.subplot(512)
-    plotKallmanXY()
-    plotOldMeasuredXY()
+    plotKalmanY()
+    plotMeasuredY()
     plt.subplot(513)
-    plotKallmanTheta()
+    plotKalmanTheta()
     plotOldMeasuredTheta()
     plt.subplot(514)
     plotXVariance()

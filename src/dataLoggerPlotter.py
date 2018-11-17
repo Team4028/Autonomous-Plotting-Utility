@@ -5,7 +5,7 @@ import csv
 import numpy as np
 import matplotlib.pyplot as plt
 
-fileFolderAndName = '20181108/20181108_203643_738_Auton.txt' # 20181103/20181103_114940_497_Auton.txt'
+fileFolderAndName = '../data/20181108/20181108_203643_738_Auton.txt' # 20181103/20181103_114940_497_Auton.txt'
 
 # Check to see if an argument was given for the file to use
 try:
@@ -15,7 +15,7 @@ except:
     print('No input given, using default file...')
 
 # Open of the data file and get the number of columns and rows
-with open('C:/Users/willi/OneDrive/Documents/GitHub/Autonomous-Plotting-Utility/data/' + fileFolderAndName, newline='') as csvfile:
+with open(fileFolderAndName, newline='') as csvfile:
     tsvreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
     
     columnHeaderList = next(tsvreader)
@@ -27,7 +27,7 @@ with open('C:/Users/willi/OneDrive/Documents/GitHub/Autonomous-Plotting-Utility/
 
 # Open the file again because csv.reader is an itterator so that the file
 # doesn't go into memory. Then put all the data in a numpy array
-with open('C:/Users/willi/OneDrive/Documents/GitHub/Autonomous-Plotting-Utility/data/' + fileFolderAndName, newline='')  as csvfile:
+with open(fileFolderAndName, newline='')  as csvfile:
     tsvreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
     dataMatrix = np.zeros((rowCount, colCount))
     for i in range(1, rowCount):
@@ -45,20 +45,18 @@ def  plotPairOfCoordsByInput():
     plotPairOfColumns(xVar, yVar)
 
 def plotVarVnumCycles(colNum):
-    fig = plt.figure()
+    # fig = plt.figure()
     plt.xlabel("Number of Cycles")
     plt.ylabel(columnHeaderList[colNum])
-    plt.plot(range(0, rowCount), dataMatrix[:,colNum])
-    # plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVar] +'.png'))
-    plt.show()
+    plt.plot(range(0, rowCount), dataMatrix[:,colNum], label=columnHeaderList[colNum])
+    plt.legend()
 
 def plotPairOfColumns(xCol, yCol):
-    fig = plt.figure()
+    # fig = plt.figure()
     plt.xlabel(columnHeaderList[xCol])
     plt.ylabel(columnHeaderList[yCol])
-    plt.plot(dataMatrix[:,xCol], dataMatrix[:,yCol])
-    # plt.savefig(('../renders/' + columnHeaderList[xVar] + ' -VS- ' + columnHeaderList[yVar] +'.png'))
-    plt.show()
+    plt.plot(dataMatrix[:,xCol], dataMatrix[:,yCol], label=columnHeaderList[yCol])
+    plt.legend()
 
 
 def plotKallmanXY():
@@ -83,13 +81,20 @@ def plotThetaVariance():
     plotVarVnumCycles(26)
 
 def fullFilterAnalysisPlot():
+    plt.figure(figsize=(12,8))
+    plt.subplot(511)
+    plt.subplot(512)
     plotKallmanXY()
     plotOldMeasuredXY()
+    plt.subplot(513)
     plotKallmanTheta()
     plotOldMeasuredTheta()
+    plt.subplot(514)
     plotXVariance()
     plotYVariance()
+    plt.subplot(515)
     plotThetaVariance()
+    plt.show()
 
 
 fullFilterAnalysisPlot()

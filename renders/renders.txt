@@ -1,1 +1,0 @@
-PNG renders that do not get committed due to .gitignore

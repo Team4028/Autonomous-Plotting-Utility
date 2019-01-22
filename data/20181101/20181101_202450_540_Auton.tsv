@@ -1,5 +1,0 @@
-StartDeltaMS	LastScanDeltaMS	Left Actual Velocity [in/s]	Left Output Current	Right Actual Velocity [in/s]	Right Output Current	Chassis Acceleration [in/s/s]	Elevator: Target Position [in]	Elevator: Postion [in]	Elevator: Velocity [in/sec]	Elevator: AccelNu [in/sec^2]	Elevator: At Target Position?	Elevator: Scale Height Bump Amount:	State: Elevator	Infeed: Left Target Arm Position	Infeed: Right Target Arm Position	Infeed: L Position	Infeed: R Position:	Infeed: L/R Arms Homed?	State: Infeed	Carriage: LimitSwitch	Carriage: VBus Cmd	State: Carriage	Climber: Current	
-0	0	0.0	0.0	0.0	0.12	0.0	0.0	0.0	0.0	0.0	true	0.0	N/A in 2019	0.0	0.0	0.0	5.636363636363637	false / false	N/A for 2019	false	0.5	STOPPED	0.0	
-18	17	0.0	0.0	0.0	0.12	0.0	0.0	0.0	0.0	0.0	true	0.0	N/A in 2019	0.0	0.0	0.0	5.636363636363637	true / false	N/A for 2019	false	0.5	STOPPED	0.0	
-32	14	-0.06	0.0	-1.22	0.12	-29.74	0.0	0.0	0.0	0.0	true	0.0	N/A in 2019	0.0	0.0	0.0	5.636363636363637	true / false	N/A for 2019	false	0.5	STOPPED	0.0	
-47	15	-1.47	0.0	-2.75	0.12	-71.72	0.0	0.0	0.0	0.0	true	0.0	N/A in 2019	0.0	0.0	0.0	5.636363636363637	true / false	N/A for 2019	false	0.5	STOPPED	0.0
